@@ -1,0 +1,27 @@
+<h2>{{admin.name | uppercase}}</h2>
+<div><span>id: </span>{{admin.id}}</div>
+<div>
+    <label for="name">Admin name: </label>
+    <input id="name" [(ngModel)]="admin.name" placeholder="name">
+</div>
+
+<h2>Sample Admins</h2>
+<ul class="admins">
+    <li *ngFor="let admin of admins"
+        [class.selected]="admin === selectedAdmin"
+        (click)="onSelect(admin)">
+        <span class="badge">{{admin.id}}</span> {{admin.name}}
+    </li>
+</ul>
+
+<app-admin-detail [admin]="selectedAdmin"></app-admin-detail>
+
+<!--빈 화면 *ngIf로 감추기-->
+<div *ngIf="selectedAdmin"> 
+    <h2>{{selectedAdmin.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{selectedAdmin.id}}</div>
+    <div>
+        <label for="admin-name">Admin name: </label>
+        <input id="admin-name" [(ngModel)]="selectedAdmin.name" placeholder="name">
+    </div>
+</div>
