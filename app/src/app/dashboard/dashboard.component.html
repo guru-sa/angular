@@ -1,0 +1,9 @@
+<h2>Top Admins</h2>
+<div class="admins-menu">
+  <a *ngFor="let admin of admins">
+    routerLink="/detail/{{admin.id}}">
+    {{admin.name}}
+  </a>
+</div>
+
+<app-admin-search></app-admin-search>

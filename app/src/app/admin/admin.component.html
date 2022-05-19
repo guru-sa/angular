@@ -1,16 +1,37 @@
 <h2>{{admin.name | uppercase}}</h2>
+<div>
+  <label for="new-admin">Admin name: </label>
+  <input id="new-admin" #adminName />
+
+  <!-- (click) 이벤트를 감지하면 현재값을 인자로 전달하면서 add() 함수를 실행하고, 입력 필드를 비웁니다. -->
+  <button class="add-button" (click)="add(adminName.value); adminName.value=''">
+    Add admin
+  </button>
+</div>
+
 <div><span>id: </span>{{admin.id}}</div>
 <div>
     <label for="name">Admin name: </label>
     <input id="name" [(ngModel)]="admin.name" placeholder="name">
 </div>
 
-<h2>Sample Admins</h2>
+<!-- <h2>Sample Admins</h2>
 <ul class="admins">
     <li *ngFor="let admin of admins"
         [class.selected]="admin === selectedAdmin"
         (click)="onSelect(admin)">
         <span class="badge">{{admin.id}}</span> {{admin.name}}
+    </li>
+</ul> -->
+
+<h2>Sample Admins</h2>
+<ul class="admins">
+    <li *ngFor="let admin of admins">
+      <a routerLink="/detail/{{admin.id}}">
+        <span class="badge">{{admin.id}}</span> {{admin.name}}
+      </a>
+      <button class="delete" title="delete admin"
+        (click)="delete(admin)">x</button>
     </li>
 </ul>
 

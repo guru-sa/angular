@@ -1,0 +1,13 @@
+<div id="search-component">
+  <label for="search-box">Admin Search</label>
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+
+  <!-- $ 는 Observable을 뜻하는 관용적인 표현입니다. -->
+  <ul class="search-result">
+    <li *ngFor="let admin of admins$ | async" >
+      <a routerLink="/detail/{{admin.id}}">
+        {{admin.name}}
+      </a>
+    </li>
+  </ul>
+</div>

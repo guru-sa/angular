@@ -1,2 +1,9 @@
 <h1>{{title}}</h1>
-<app-admin></app-admin>
+<nav>
+    <a routerLink="/dashboard">Dashboard</a>
+    <a routerLink="/admin">Admins</a>
+</nav>
+<!--라우팅 영역을 추가합니다.-->
+<router-outlet></router-outlet>
+<!--<app-admin></app-admin>-->
+<app-messages></app-messages>
