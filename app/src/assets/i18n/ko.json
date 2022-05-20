@@ -1,0 +1,7 @@
+{
+  "welcomeMessage": "가입해 주셔서 감사합니다. {{ firstName }}님! 당신이 있어 정말 좋아요!",
+  "login": {
+    "username": "이름을 입력하세요",
+    "password": "패스워드를 입력하세요"
+  }
+}

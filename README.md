@@ -37,3 +37,9 @@ ng generate service InMemoryData
 
 # 템플릿 기반 폼은 컴포넌트에 있는 데이터를 템플릿에 반영할 때, 템플릿에 입력한 데이터를 컴포넌트에 반영할 때 양방향 데이터 바인딩(two-way data binding)을 활용합니다.
 
+# ngx-logger
+npm install ngx-logger
+
+# translate 다국어 적용
+npm install @ngx-translate/core
+npm install @ngx-translate/http-loader
